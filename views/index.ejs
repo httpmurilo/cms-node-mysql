@@ -1,0 +1,31 @@
+<%- include ('partials/header') %>
+<%- include ('partials/homenavbar') %>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vindo!</h1>
+            <p class="lead">Este é um simples cms.</p>
+            <hr class="my-4">
+            <p>Voce consegue cadastrar artigos ricos e incluir categorias.</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+          </div>
+
+        <hr>
+        <% articles.forEach(article => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title %></h2>
+                </div>
+                <div class="card-body">
+                    <a href="/<%= article.slug %>" class="btn btn-success"> Ler artigo</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+
+<%- include ('partials/footer') %>
